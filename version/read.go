@@ -57,10 +57,10 @@ func ReadExe(file string) (Version, error) {
 			v.Release = release
 
 		}
-		if strings.Contains(name, "_Cfunc__goboringcrypto_") || name == "crypto/internal/boring/sig.BoringCrypto" {
+		if strings.Contains(name, "_Cfunc__goboringcrypto_") || strings.HasPrefix(name, "crypto/internal/boring/sig.BoringCrypto") {
 			v.BoringCrypto = true
 		}
-		if name == "crypto/internal/boring/sig.FIPSOnly" {
+		if strings.HasPrefix(name, "crypto/internal/boring/sig.FIPSOnly") {
 			v.FIPSOnly = true
 		}
 		for _, re := range standardCryptoNames {
