@@ -61,7 +61,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"rsc.io/goversion/version"
+	"github.com/cert-manager/goversion/version"
 )
 
 var (
